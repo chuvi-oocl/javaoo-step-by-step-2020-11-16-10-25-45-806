@@ -38,12 +38,16 @@ public class Teacher extends Person {
     }
 
     public String introduce() {
+        String result = super.introduce() + " I am a Teacher. I teach ";
         if (klass != null) {
-            return super.introduce() + " I am a Teacher. I teach " + klass.getDisplayName() + ".";
-        } else {
-
-            return super.introduce() + " I am a Teacher. I teach Class " + this.klasses.stream().map(Klass::getNumber).map(String::valueOf).collect(Collectors.joining(", ")) + ".";
+            result += klass.getDisplayName() + ".";
+        } else if(klasses != null && klasses.size() > 0){
+            result += "Class " + klasses.stream().map(Klass::getNumber).map(String::valueOf).collect(Collectors.joining(", ")) + ".";
         }
+        else{
+            result +=  "No Class.";
+        }
+        return result;
     }
 
     public String introduceWith(Student student) {
