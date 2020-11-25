@@ -6,7 +6,6 @@ public class Klass {
 
     public Klass(int klass) {
         this.klass = klass;
-        this.leader = null;
     }
 
     public int getNumber() {
