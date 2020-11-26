@@ -5,7 +5,6 @@ public class Teacher extends Person {
 
     public Teacher(String name, int age) {
         super(name, age);
-        this.klass = new Klass(-1);
     }
 
     public Teacher(String name, int age, Klass klass) {
@@ -17,13 +16,14 @@ public class Teacher extends Person {
         return klass;
     }
 
+    @Override
     public String introduce() {
         return super.introduce() + " I am a Teacher. I teach " + klass.getDisplayName() + ".";
     }
 
     public String introduceWith(Student student) {
         String result = super.introduce() + " I am a Teacher. I ";
-        if (student.getKlass() != klass) {
+        if (student.getKlass() != this.getKlass()) {
             result += "don't ";
         }
         result += "teach " + student.getName() + ".";

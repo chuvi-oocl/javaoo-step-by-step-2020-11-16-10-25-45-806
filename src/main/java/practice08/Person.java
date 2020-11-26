@@ -29,9 +29,9 @@ public class Person {
     }
 
     @Override
-    public boolean equals(Object object){
-        if(object instanceof Person){
-            return((Person) object).getId() == this.id;
+    public boolean equals(Object object) {
+        if (object instanceof Person) {
+            return ((Person) object).getId() == this.id;
         }
         return super.equals(object);
     }

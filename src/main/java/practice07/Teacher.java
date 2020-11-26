@@ -5,7 +5,6 @@ public class Teacher extends Person {
 
     public Teacher(int id, String name, int age) {
         super(id, name, age);
-        this.klass = new Klass(-1);
     }
 
     public Teacher(int id, String name, int age, Klass klass) {
@@ -17,6 +16,7 @@ public class Teacher extends Person {
         return klass;
     }
 
+    @Override
     public String introduce() {
         return super.introduce() + " I am a Teacher. I teach " + klass.getDisplayName() + ".";
     }

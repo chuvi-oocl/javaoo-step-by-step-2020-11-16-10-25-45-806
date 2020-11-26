@@ -7,6 +7,7 @@ public class Student extends Person {
         super(id, name, age);
         this.klass = klass;
     }
+
     public void setKlass(Klass klass) {
         this.klass = klass;
     }
@@ -15,15 +16,15 @@ public class Student extends Person {
         return klass;
     }
 
+    @Override
     public String introduce() {
         String result = super.introduce() + " I am a Student. I am ";
-        if(klass.getLeader() == this){
+        if (klass.getLeader() == this) {
             result += "Leader of ";
-        }
-        else{
+        } else {
             result += "at ";
         }
-        result += klass.getDisplayName()+'.';
+        result += klass.getDisplayName() + '.';
         return result;
     }
 }

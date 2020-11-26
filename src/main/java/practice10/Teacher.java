@@ -9,7 +9,6 @@ public class Teacher extends Person {
 
     public Teacher(int id, String name, int age) {
         super(id, name, age);
-        this.klass = new Klass(-1);
     }
 
     public Teacher(int id, String name, int age, Klass klass) {
@@ -42,6 +41,7 @@ public class Teacher extends Person {
         return (student.getKlass() == this.klass || (klasses.stream().anyMatch(i -> i == student.getKlass())));
     }
 
+    @Override
     public String introduce() {
         String result = super.introduce() + " I am a Teacher. I teach ";
         if (klass != null) {

@@ -10,7 +10,6 @@ public class Teacher extends Person {
 
     public Teacher(int id, String name, int age) {
         super(id, name, age);
-        this.klass = new Klass(-1);
     }
 
     public Teacher(int id, String name, int age, Klass klass) {
@@ -29,7 +28,7 @@ public class Teacher extends Person {
         return klass;
     }
 
-    public LinkedList<practice09.Klass> getClasses() {
+    public LinkedList<Klass> getClasses() {
         return klasses;
     }
 
@@ -38,16 +37,13 @@ public class Teacher extends Person {
     }
 
     public String introduce() {
-        String result = super.introduce() + " I am a Teacher. I teach ";
         if (klass != null) {
-            result += klass.getDisplayName() + ".";
-        } else if(klasses != null && klasses.size() > 0){
-            result += "Class " + klasses.stream().map(Klass::getNumber).map(String::valueOf).collect(Collectors.joining(", ")) + ".";
+            return super.introduce() + " I am a Teacher. I teach " + klass.getDisplayName() + ".";
         }
-        else{
-            result +=  "No Class.";
+        if (klasses != null && klasses.size() > 0) {
+            return super.introduce() + " I am a Teacher. I teach " + "Class " + klasses.stream().map(Klass::getNumber).map(String::valueOf).collect(Collectors.joining(", ")) + ".";
         }
-        return result;
+        return super.introduce() + " I am a Teacher. I teach " + "No Class.";
     }
 
     public String introduceWith(Student student) {

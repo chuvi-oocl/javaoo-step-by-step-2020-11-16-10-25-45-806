@@ -1,7 +1,7 @@
 package practice10;
 
 public class Klass {
-    private int klass;
+    private Integer klass;
     private Student leader;
     private Teacher notifyingTeacher;
 
@@ -11,7 +11,7 @@ public class Klass {
         this.notifyingTeacher = null;
     }
 
-    public int getNumber() {
+    public Integer getNumber() {
         return klass;
     }
 
@@ -43,7 +43,7 @@ public class Klass {
 
     public String getDisplayName() {
         String result = "";
-        if (klass == -1) {
+        if (klass == null) {
             result += "No Class";
         } else {
             result += "Class " + klass;

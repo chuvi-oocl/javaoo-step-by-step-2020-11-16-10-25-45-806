@@ -1,28 +1,28 @@
 package practice07;
 
 public class Klass {
-    private int klass;
+    private Integer klass;
     private Student leader;
 
     public Klass(int klass) {
         this.klass = klass;
     }
 
-    public int getNumber() {
+    public Integer getNumber() {
         return klass;
     }
 
-    public Student getLeader(){
+    public Student getLeader() {
         return this.leader;
     }
 
-    public void assignLeader(Student student){
+    public void assignLeader(Student student) {
         this.leader = student;
     }
 
     public String getDisplayName() {
         String result = "";
-        if (klass == -1) {
+        if (klass == null) {
             result += "No Class";
         } else {
             result += "Class " + klass;

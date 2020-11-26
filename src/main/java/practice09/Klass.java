@@ -1,14 +1,14 @@
 package practice09;
 
 public class Klass {
-    private int klass;
+    private Integer klass;
     private Student leader;
 
     public Klass(int klass) {
         this.klass = klass;
     }
 
-    public int getNumber() {
+    public Integer getNumber() {
         return klass;
     }
 
@@ -30,7 +30,7 @@ public class Klass {
 
     public String getDisplayName() {
         String result = "";
-        if (klass == -1) {
+        if (klass == null) {
             result += "No Class";
         } else {
             result += "Class " + klass;
