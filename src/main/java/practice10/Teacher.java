@@ -25,8 +25,13 @@ public class Teacher extends Person {
         this.klasses.forEach(klass -> klass.setNotifyingTeacher(this));
     }
 
-    public void notifyMe(String message) {
-        System.out.print("I am " + this.getName() + ". I know " + message + "\n");
+    public void notifyAssignLeader(String name, Integer klass) {
+        System.out.format("I am %s. I know %s become Leader of Class %s.\n", this.getName(), name, klass);
+    }
+
+
+    public void notifyAppendMember(String name, Integer klass) {
+        System.out.format("I am %s. I know %s has joined Class %s.\n", this.getName(), name, klass);
     }
 
     public Klass getKlass() {

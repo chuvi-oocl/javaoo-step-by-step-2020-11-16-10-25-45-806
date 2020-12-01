@@ -29,7 +29,7 @@ public class Klass {
         } else {
             this.leader = student;
             if (notifyingTeacher != null) {
-                notifyingTeacher.notifyMe(student.getName() + " become Leader of Class " + klass + ".");
+                notifyingTeacher.notifyAssignLeader(student.getName(), klass);
             }
         }
     }
@@ -37,7 +37,7 @@ public class Klass {
     public void appendMember(Student student) {
         student.setKlass(this);
         if (notifyingTeacher != null) {
-            notifyingTeacher.notifyMe(student.getName() + " has joined Class " + klass + ".");
+            notifyingTeacher.notifyAppendMember(student.getName(), klass);
         }
     }
 
